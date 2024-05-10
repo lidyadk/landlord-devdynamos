@@ -1,5 +1,9 @@
 import Image from "next/image";
 
 export default function Home() {
-  return <main>Hey!</main>;
+  return (
+    <main>
+      <button class="btn btn-neutral">Neutral</button>
+    </main>
+  );
 }
