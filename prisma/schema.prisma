@@ -12,10 +12,18 @@ datasource db {
 model User {
   id String @id @default(cuid())
   username String
-  email String
+  email String @unique
   password String
-  userType String
+  role Role
+  properties Property[]
+
 } 
+
+enum Role {
+  LANDLORD @map("landlord")
+  TENANT   @map("tenant")
+}
+
 
 model Property {
   id String @id @default(cuid())
@@ -27,4 +35,5 @@ model Property {
   numberOfRoom String
   available String
   userId String
+  user User @relation(fields: [userId], references: [id])
 }
