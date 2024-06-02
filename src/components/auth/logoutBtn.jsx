@@ -12,8 +12,8 @@ export const LogoutBtn = () => {
   }
 
   return (
-    <button onClick={handleLogout} className="w-fit">
-      Logout
+    <button onClick={handleLogout} className="w-fit btn bg-black text-white">
+      Log Out
     </button>
   );
 };
