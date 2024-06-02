@@ -1,0 +1,7 @@
+### Login
+POST http://localhost:3000/api/auth/login
+
+{
+    "email" : "ujang@devscale.id",
+    "password" : "ujanggorengtepung"
+}
