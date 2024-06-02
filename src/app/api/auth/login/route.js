@@ -12,13 +12,13 @@ export async function POST(req) {
   });
 
   if (!user) {
-    return Response.json({ message: "Account not found!" });
+    return Response.json({ message: "Account not found!" }, { status: 401 });
   }
 
   const isPasswordMatch = await bcrypt.compare(password, user.password);
 
   if (!isPasswordMatch) {
-    return Response.json({ message: "Password invalid!" });
+    return Response.json({ message: "Password invalid!" }, { status: 401 });
   }
 
   const payload = {

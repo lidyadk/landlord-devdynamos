@@ -27,7 +27,4 @@ export default async function Layout({ children }) {
   } catch {
     error;
   }
-  {
-    redirect("/");
-  }
 }
