@@ -2,12 +2,15 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export const Login = () => {
   const router = useRouter();
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false); // loading still not working
 
   async function handleLogin(formData) {
+    setLoading(true);
     const email = formData.get("email");
     const password = formData.get("password");
 
@@ -17,11 +20,14 @@ export const Login = () => {
     });
 
     const data = await res.json();
-    setMessage(data.message);
+    setLoading(false);
 
     if (res.status === 200) {
+      toast.success("Login success");
       router.push("/dashboard");
+      router.refresh();
     } else {
+      setMessage(data.message);
     }
   }
 
@@ -30,7 +36,7 @@ export const Login = () => {
       <section className="flex justify-center items-center w-full">
         <h1 className="text-2xl">Welcome back</h1>
       </section>
-      <form action={handleLogin} className="space-y-2">
+      <form action={handleLogin} disabled={loading} className="space-y-2">
         <input
           type="email"
           placeholder="Email"
@@ -43,7 +49,9 @@ export const Login = () => {
           name="password"
           className="input input-bordered input-secondary w-full"
         />
-        <button className="btn btn-secondary w-full my-3">Sign in</button>
+        <button className="btn btn-secondary w-full my-3 disabled:opacity-40 disabled:cursor-wait">
+          Sign in
+        </button>
       </form>
       {message !== "" ? (
         <div role="alert" className="alert alert-warning">
