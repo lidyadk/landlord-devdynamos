@@ -85,9 +85,8 @@ export const Login = () => {
           Sign in
         </button>
         <p className="flex justify-center pt-1 font-sans text-gray-600">
-          Don't have an account?{" "}
+          Don&apos;t have an account?
           <Link href="/register" className="pl-1 text-blue-600">
-            {" "}
             Sign Up
           </Link>
         </p>
