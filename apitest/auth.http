@@ -7,3 +7,11 @@ POST http://localhost:3000/api/auth/register
     "password": "ujanggorengtepung",
     "role": "TENANT"
 }
+
+### Login
+POST http://localhost:3000/api/auth/login
+
+{
+    "email" : "ujang@devscale.id",
+    "password" : "ujanggorengtepung"
+}
