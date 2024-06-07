@@ -37,7 +37,7 @@ export const Login = () => {
     <main className="space-y-6">
       <section className="items-center w-full">
         <h1 className="text-3xl flex justify-center font-bold font-sans ">
-          Welcome back
+          Welcome
         </h1>
         <p className="flex justify-center text-gray-600 pt-2">
           Please login to your account
