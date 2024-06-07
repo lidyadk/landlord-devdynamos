@@ -94,7 +94,6 @@ export const DashboardLayout = ({ isLandlord, username, children }) => {
       </div>
     );
   } else {
-    router.push("/") &&
-      router.push(router.asPath, undefined, { shallow: true });
+    router.push("/");
   }
 };

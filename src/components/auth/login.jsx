@@ -15,7 +15,7 @@ export const Login = () => {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const res = await fetch("http://localhost:3000/api/auth/login", {
+    const res = await fetch("/api/auth/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
     });
